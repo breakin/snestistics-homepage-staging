@@ -4,6 +4,10 @@
 
 $body-background: #555;
 	
+body {
+	background: $body-background;
+}
+
 navigation {
 	padding: 5px 0px;
 	display: block;
