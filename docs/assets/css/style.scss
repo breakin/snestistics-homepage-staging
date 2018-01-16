@@ -2,6 +2,8 @@
 ---
 @import "{{ site.theme }}";
 
+$body-background: #555;
+	
 navigation {
 	padding: 5px 0px;
 	display: block;
