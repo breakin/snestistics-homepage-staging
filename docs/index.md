@@ -2,6 +2,8 @@
 title: About
 layout: default
 ---
+Welcome to Snestistics. If you find any errors on this home page or in snestistics itself, feel free to [open an issue on github](https://github.com/breakin/snestistics/issues) or to reach out to me on [twitter](https://twitter.com/anders_breakin).
+
 Features
 ========
 * Generate Assembler source
