@@ -2,10 +2,17 @@
 ---
 
 @import "{{ site.theme }}";
-wrapper {
+.wrapper {
 	width: 1200px;
 }
 
 footer {
 	width: 1200px;
+}
+
+navigation {
+	width: 100%;
+	font-weight: 400;
+	font-size: 130%;
+	padding: 20px;
 }

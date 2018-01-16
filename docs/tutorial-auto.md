@@ -17,7 +17,7 @@ snestistics
 ~~~~~~~~~~~~~~~~~~~~~~~
 See [user-guide](user-guide) for more command line options.
 
-Lets see how it fares on .Battle Pinball_.
+Lets see how it fares on -Battle Pinball_.
 
 Before auto-annotate:
 ~~~~~~~~~~~~~~~~~~~~~~~
