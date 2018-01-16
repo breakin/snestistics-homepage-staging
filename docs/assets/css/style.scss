@@ -10,10 +10,19 @@ navigation {
 	font-size: 130%;
 }
 
+navigation a {
+	padding: 0 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1:before {
+    content: "";
+}
+
 ul > * > ul {
 	margin: 0;
 }
 
-navigation a {
-	padding: 0 10px;
-}
