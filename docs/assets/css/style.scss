@@ -1,7 +1,7 @@
 ---
 ---
-
 @import "{{ site.theme }}";
+
 .wrapper {
 	width: 1200px;
 }
@@ -11,8 +11,17 @@ footer {
 }
 
 navigation {
-	width: 100%;
-	font-weight: 400;
+	padding: 5px 0px;
+	display: block;
+	text-align: center;
+	font-weight: 500;
 	font-size: 130%;
-	padding: 20px;
+}
+
+ul > * > ul {
+	margin: 0;
+}
+
+navigation a {
+	padding: 0 10px;
 }

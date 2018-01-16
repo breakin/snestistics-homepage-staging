@@ -18,18 +18,19 @@
   <body>
     <div class="wrapper">
       <header class="without-description">
-        <h1>SNESTISTICS</h1>
+        <h1>SNESTISTICS - {{ page.title }}</h1>
         <ul>
-          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+          <li><a href="{{ site.github.repository_url }}">Source On <strong>GitHub</strong></a></li>
         </ul>
       </header>
 
       <navigation>
-          <a href="index">home</a>
-          <a href="user-guide">user-guide</a>
-          <a href="tutorial">tutorial</a>
-          <a href="history">history</a>
-          <a href="about">about</a>
+          <strong>
+            <a href="user-guide">user-guide</a>
+            <a href="tutorial">tutorial</a>
+            <a href="history">history</a>
+            <a href="index">about</a>
+          </strong>
       </navigation>
 
       <section>
@@ -40,7 +41,7 @@
     </div>
     <footer>
     {% if site.github.is_project_page %}
-      <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+      <p>Maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
     {% endif %}
       <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
     </footer>
