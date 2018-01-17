@@ -14,7 +14,12 @@ $color-shadow: #969490;
 $body-background: #555;
 	
 body {
-	background: $body-background;
+	background: $color-bg;
+}
+
+header {
+    background: none;
+    border-bottom: 1px dashed $color-yellow;
 }
 
 navigation {
