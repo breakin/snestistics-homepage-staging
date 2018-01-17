@@ -15,6 +15,7 @@ $color-dark-gray: #4b4946;
 $color-red: #d41c13;
 $color-green: #249219;
 $color-blue: #135ea3;
+$color-light-blue: #2d97e0;
 $color-yellow: #e2b329;
 $color-highlight: #f3f1ec;
 $color-shadow: #969490;
@@ -132,15 +133,15 @@ header h1:before {
 
 pre {
   background: $color-dark-gray;
-  color: $color-yellow;
+  color: $color-light-blue;
 }
 
 pre code.highlighter-rouge {
-  color: $color-yellow;
+  color: $color-light-blue;
 }
 
 .highlight, .highlight .w {
-  color: $color-yellow;
+  color: $color-light-blue;
 }
 
 ul li {
