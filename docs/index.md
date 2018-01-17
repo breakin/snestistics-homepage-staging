@@ -28,7 +28,7 @@ Current Limitations
 
 Claim to Fame
 =============
-* Used in the [Super Famicon Wars translation project](https://www.romhacking.net/translations/3354/)
+* Used in the [Super Famicom Wars translation project](https://www.romhacking.net/translations/3354/)
 
 Contributors
 ============
