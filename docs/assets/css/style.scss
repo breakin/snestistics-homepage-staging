@@ -101,6 +101,24 @@ ul > * > ul {
   margin: 0;
 }
 
+table {
+  margin: 0 0 20px 0;
+  background: transparent;
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px solid $color-text;
+  padding: 5px 10px;
+}
+
+td {
+  padding: 5px 10px;
+  border-bottom: 1px solid $color-light-text;
+}
+
 .container {
   max-width: 860px;
 }
