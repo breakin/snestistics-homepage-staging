@@ -3,7 +3,9 @@
 @import "{{ site.theme }}";
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('https://fonts.googleapis.com/css?family=Baloo');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+$font-body: "Ubuntu";
+$font-head: "Archivo Black";
 
 $color-bg: #d1cfca;
 $color-text: #4d4c49;
@@ -20,11 +22,11 @@ $body-background: #555;
 body {
   background: $color-bg;
   color: $color-text;
-  font-family: "Ubuntu", sans-serif;
+  font-family: $font-body, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Baloo", sans-serif;
+  font-family: $font-head, sans-serif;
   margin: 0;
   text-shadow: none;
   color: $color-green;
@@ -50,7 +52,7 @@ header h1 {
   font-size: 45px;
   line-height: 1;
   font-weight: bold;
-  font-family: "Baloo", sans-serif;
+  font-family: $font-head, sans-serif;
   color: $color-red;
   text-shadow: none;
   letter-spacing: -2px;
@@ -66,7 +68,7 @@ navigation {
   padding: 20px 0 0 0;
   display: block;
   text-align: left;
-  font-family: "Baloo", sans-serif;
+  font-family: $font-head, sans-serif;
   font-weight: 500;
   font-size: 20px;
 }
