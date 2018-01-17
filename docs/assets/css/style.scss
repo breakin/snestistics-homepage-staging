@@ -36,6 +36,16 @@ header {
   border-bottom: 1px dashed $color-yellow;
 }
 
+header h1 {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Baloo", sans-serif;
+  color: $color-green;
+  text-shadow: none;
+  letter-spacing: 0;
+}
+
 navigation {
   padding: 5px 0px;
   display: block;
