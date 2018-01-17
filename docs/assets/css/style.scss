@@ -121,9 +121,10 @@ ul > * > ul {
 }
 
 blockquote {
-  color: $color-text;
+  color: $color-light-text;
   padding-left: 10px;
-  border-left: 1px dotted $color-yellow;
+  border-left: 2px solid $color-yellow;
+  -webkit-margin-start: 20px;
 }
 
 table {
