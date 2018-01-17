@@ -37,6 +37,8 @@ a {
 header {
   background: none;
   border-bottom: 1px dashed $color-yellow;
+  padding: 20px 0 10px 0;
+  margin: 0 0 40px 0;
 }
 
 header h1 {
@@ -56,11 +58,12 @@ header h2 {
 }
 
 navigation {
-  padding: 5px 0px;
+  padding: 20px 0 0 0;
   display: block;
   text-align: left;
+  font-family: "Baloo", sans-serif;
   font-weight: 500;
-  font-size: 130%;
+  font-size: 20px;
 }
 
 navigation a {
