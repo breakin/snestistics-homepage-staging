@@ -46,10 +46,23 @@ a {
 }
 
 header {
+  display: block;
+  position: relative;
   background: none;
-  border-bottom: 1px dashed $color-yellow;
+  border-bottom: 1px solid $color-highlight;
   padding: 20px 0 10px 0;
   margin: 0 0 40px 0;
+}
+
+header:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: -2px;
+  border-bottom: 1px solid $color-shadow;
 }
 
 header h1 {
