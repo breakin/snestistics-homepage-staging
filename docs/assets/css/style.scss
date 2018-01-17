@@ -7,6 +7,7 @@
 
 $color-bg: #d1cfca;
 $color-text: #4d4c49;
+$color-light-text: #686660;
 $color-red: #d41c13;
 $color-green: #249219;
 $color-blue: #135ea3;
@@ -51,7 +52,7 @@ header h1 {
 header h2 {
   font-size: 20px;
   font-weight: 300;
-  color: $color-text;
+  color: $color-light-text;
 }
 
 navigation {
