@@ -17,42 +17,46 @@ $color-shadow: #969490;
 $body-background: #555;
 	
 body {
-	background: $color-bg;
-	color: $color-text;
-	font-family: "Ubuntu", sans-serif;
+  background: $color-bg;
+  color: $color-text;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Baloo", sans-serif;
 }
 
 a {
-	color: $color-blue;
-	text-shadow: 0 1px 0px rgba(255, 255, 255, 0.15)
+  color: $color-blue;
+  text-shadow: 0 1px 0px rgba(255, 255, 255, 0.15)
 }
 
 header {
-	background: none;
-	border-bottom: 1px dashed $color-yellow;
+  background: none;
+  border-bottom: 1px dashed $color-yellow;
 }
 
 navigation {
-	padding: 5px 0px;
-	display: block;
-	text-align: left;
-	font-weight: 500;
-	font-size: 130%;
+  padding: 5px 0px;
+  display: block;
+  text-align: left;
+  font-weight: 500;
+  font-size: 130%;
 }
 
 navigation a {
-	padding: 0 10px 0 0;
+  padding: 0 10px 0 0;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 header h1:before {
-    content: "";
+  content: "";
 }
 
 ul > * > ul {
-	margin: 0;
+  margin: 0;
 }
 
