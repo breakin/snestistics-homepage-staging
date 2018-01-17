@@ -1,5 +1,5 @@
 ---
-title: Tutorial 6 - Back to reverse engineering!
+title: Tutorial 6 • Back to Reverse Engineering!
 layout: default
 ---
 This post continues where the [first post](tutorial-intro) left off. Now we have gained a lot of knowledge about how snestistics works and we have access to a rough assembly listing of our game. 
