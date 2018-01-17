@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 $font-body: "Ubuntu";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+$font-mono: "Ubuntu Mono";
 @import url('https://fonts.googleapis.com/css?family=Exo+2:700');
 $font-head: "Exo 2";
 
@@ -27,6 +29,10 @@ body {
   color: $color-text;
   font-family: $font-body, sans-serif;
   margin-bottom: 80px;
+}
+
+pre, code {
+  font-family: $font-mono, monospace;
 }
 
 h1, h2, h3, h4, h5, h6 {
