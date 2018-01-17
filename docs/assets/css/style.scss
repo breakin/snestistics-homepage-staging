@@ -10,6 +10,7 @@ $font-head: "Arimo";
 $color-bg: #d1cfca;
 $color-text: #4d4c49;
 $color-light-text: #686660;
+$color-light-gray: #a6a4a0;
 $color-red: #d41c13;
 $color-green: #249219;
 $color-blue: #135ea3;
@@ -116,7 +117,7 @@ th {
 
 td {
   padding: 5px 10px;
-  border-bottom: 1px solid $color-light-text;
+  border-bottom: 1px solid $color-light-gray;
 }
 
 .container {
