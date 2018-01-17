@@ -131,6 +131,14 @@ header h1:before {
   text-transform: uppercase;
 }
 
+code.highlighter-rouge {
+  background: rgba(0, 0, 0, 0.125);
+  border-radius: 1.5px;
+  padding: 0 2px;
+  margin: 0 1px;
+  color: $color-blue;
+}
+
 pre {
   background: $color-dark-gray;
   color: $color-light-blue;
