@@ -13,7 +13,7 @@ Each feature of snestistics has a few command line options of their own. These a
 snestistics -romfile myrom.sfc -autoannotate true -nmifirst 12 -nmilast 24 -asmoutfile output.asm
 ~~~~~~~~~~~~~~
 
-ROM support
+ROM Support
 ===========
 Almost all command requires a ROM file to be specified. Most of the time it is enough to supply the name of the ROM file and the rest should be inferred from other files (such as the trace file or by doing auto-detection based on content in the ROM-file):
 
@@ -25,7 +25,7 @@ A trace file describes what happened during a session in an emulator with a part
 
 {% include generated-cmd-trace.html %}
 
-Assembly listing
+Assembly Listing
 ================
 If you supply a ROM-file and a trace-file (written by snes9x-snestistics) you can generate an assembly listing of the program. See the command line reference for relevant switches. Then annotations can be be added to beautify the assembly listing. The idea is to work with the assembler listing and the annotations in an iterative way, progressively building up an understand of the inner workings of the game.
 
@@ -41,8 +41,8 @@ In most games there are thousands of unknown pieces of code. In order to use the
 
 {% include generated-cmd-annotation.html %}
 
-Labels file format
-==================
+Labels Markup
+=============
 ## Functions
 A function is composed of a range with a starting address and an end address. These are easy to find from the assembly listing. Comments can be added with ; on lines before the function keyword. The line starting with # specifies a *use comment* that is special. It is used as a summary that is written whenever someone references this function (say a jump). That way you get a summary at the site of the jump.
 ~~~~~~~~~~~~~~
