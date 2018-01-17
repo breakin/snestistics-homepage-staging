@@ -120,6 +120,12 @@ ul > * > ul {
   margin: 0;
 }
 
+blockquote {
+  color: $color-text;
+  padding-left: 10px;
+  border-left: 1px dotted $color-yellow;
+}
+
 table {
   margin: 0 0 20px 0;
   background: transparent;
