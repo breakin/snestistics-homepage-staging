@@ -2,7 +2,7 @@
 title: User Guide
 layout: default
 ---
-Snestistics is a tool that helps the user reverse engineer games for the Super Nintendo. In general snestistics needs a ROM file (.sfc/.smc) and a custom trace file. The [first entry](tutorial-1) in the tutorial series shows how to create a trace file and how to make snestistics generate assembly listing.
+Snestistics is a tool that helps the user reverse engineer games for the Super Nintendo. In general snestistics needs a ROM file (.sfc/.smc) and a custom trace file. The [introduction](tutorial-1) of the tutorial series shows how to create a trace file and how to make snestistics generate assembly listing.
 
 Snestistics is an "emulator-guided" disassembler. This helps it beat other disassemblers doing only static analysis. Because of this one (or multiple) sessions must first be "recorded" in an emulator. Each such session yields a .trace-file that represent a particular run of the game.
 
