@@ -2,7 +2,7 @@
 title: Tutorial 1 • Introduction
 layout: default
 ---
-In order to do the [Super Famicom Wars (SFW) translation](http://www.romhacking.net/translations/3354) we had to start by understanding how to game worked. Once this was done an equally hard task was to modify the game. But understanding came first. In order to understand it we used [snestistics](https://github.com/breakin/snestistics). Lots of new features were added during this process, but it was worth it! [Here](about) is a detailed history on snestistics with discussion on why it works like it does. 
+In order to do the [Super Famicom Wars (SFW) translation](http://www.romhacking.net/translations/3354) we had to start by figuring out how *(parts of)* the game worked. Once this was done an equally hard task was to modify the game. But understanding came first. [snestistics](https://github.com/breakin/snestistics) was a key part of this process, and lots of functionality was added to the tool as we went along. [Here](about) is a detailed history on snestistics with discussion on why it works like it does. 
 
 In this tutorial series we will simply show what you can do with snestistics and not compare it to other tools and approaches. When we started SFW snestistics was not very mature at all. A lot of tedious tasks we had to do by hand and writing a straightforward tutorial like this would not be possible!
 
