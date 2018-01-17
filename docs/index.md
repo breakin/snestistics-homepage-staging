@@ -2,7 +2,7 @@
 title: About
 layout: default
 ---
-Welcome to snestistics. The source code can be at [GitHub](https://github.com/breakin/snestistics). If you find any errors on this home page or in snestistics itself, feel free to [open an issue on GitHub](https://github.com/breakin/snestistics/issues) or to reach out to me on [Twitter](https://twitter.com/anders_breakin).
+Welcome to snestistics. See [here](https://github.com/breakin/snestistics/releases) for binaries. The source code can be at [GitHub](https://github.com/breakin/snestistics). If you find any errors on this home page or in snestistics itself, feel free to [open an issue on GitHub](https://github.com/breakin/snestistics/issues) or to reach out to me on [Twitter](https://twitter.com/anders_breakin).
 
 Features
 ========
@@ -16,7 +16,7 @@ See [user-guide](user-guide) for a description on how to use the features!
 
 Current Limitations
 ===================
-* For now you need to build snestistics yourself (works on windows, osx and linux using cmake). An pre-build binary of the emulator for Windows can be found in /deps in the source code.
+* Windows only (snestistics build on windows, osx and linux but snes9x only on windows)
 * Only supports "LoROM" games.
 * Non-CPU->CPU DMA not currently supported
 	* Also DMA not supported at all by rewind
