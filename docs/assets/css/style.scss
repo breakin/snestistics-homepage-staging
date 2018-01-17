@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   text-shadow: none;
   color: $color-green;
+  letter-spacing: -0.015em;
 }
 
 p {
@@ -58,7 +59,7 @@ header h1 {
   font-family: $font-head, sans-serif;
   color: $color-yellow;
   text-shadow: none;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
 }
 
 header h2 {
