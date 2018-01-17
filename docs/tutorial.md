@@ -11,8 +11,8 @@ Posts
 2. [Generating Trace and Assembly Listing](tutorial-first-asm)
 3. [Annotations](tutorial-annotations)
 4. [Code Prediction](tutorial-predict)
-5. [Auto annotations](tutorial-auto)
-6. [Back to reverse engineering!](tutorial-re1)
+5. [Auto Annotations](tutorial-auto)
+6. [Back to Reverse Engineering!](tutorial-re1)
 
 Topics for future posts
 =======================
