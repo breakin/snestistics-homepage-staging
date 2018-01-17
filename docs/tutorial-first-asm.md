@@ -28,7 +28,7 @@ Note that traces currently end up in the _current working directory_ so if you s
 
 Only the .trace-file is important and the other ones can be deleted.
 
-In a future post we will give more tips'n'trics to make things even better with regards to trace file creation in snes9x. For more information on why we are using an emulator and why it happens to currently be snes9x see [here](about).
+In a future post we will give more tips'n'tricks to make things even better with regards to trace file creation in snes9x. For more information on why we are using an emulator and why it happens to currently be snes9x see [here](about).
 
 Running snestistics
 ===================
