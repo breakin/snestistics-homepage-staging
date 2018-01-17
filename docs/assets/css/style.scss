@@ -2,6 +2,9 @@
 ---
 @import "{{ site.theme }}";
 
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+
 $color-bg: #969490;
 $color-text: #4d4c49;
 $color-red: #d41c13;
@@ -15,11 +18,13 @@ $body-background: #555;
 	
 body {
 	background: $color-bg;
+	color: $color-text;
+	font-family: "Ubuntu", sans-serif;
 }
 
 header {
-    background: none;
-    border-bottom: 1px dashed $color-yellow;
+	background: none;
+	border-bottom: 1px dashed $color-yellow;
 }
 
 navigation {
