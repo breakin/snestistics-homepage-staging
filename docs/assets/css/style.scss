@@ -138,11 +138,14 @@ pre {
 
 pre code.highlighter-rouge {
   color: $color-light-blue;
-  font-size: 14px;
 }
 
 .highlight, .highlight .w {
   color: $color-light-blue;
+}
+
+.highlight pre {
+    font-size: 14px;
 }
 
 ul li {
