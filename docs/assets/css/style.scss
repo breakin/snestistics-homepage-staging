@@ -22,6 +22,11 @@ body {
 	font-family: "Ubuntu", sans-serif;
 }
 
+a {
+	color: $color-blue;
+	text-shadow: 0 1px 0px rgba(255, 255, 255, 0.15)
+}
+
 header {
 	background: none;
 	border-bottom: 1px dashed $color-yellow;
