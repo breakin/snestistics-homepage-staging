@@ -2,21 +2,21 @@
 title: Tutorial 7 • Digging for Strings
 layout: default
 ---
-In the [last post](tutorial-re1) we used a combination of emulator debugging and snestistics disassembly to track down and understand the function responsible for putting new characters into the tile map. It turned out that it was a "system" function that is called each vertical blanking interval, and that "user" code elsewhere in the program feeds it at the fixed RAM location `$0100`. Let's put a WRITE breakpoint there during the text writer! 
+In the [last post](tutorial-re1) we used a combination of emulator debugging and snestistics disassembly to track down and understand the function responsible for putting new characters into the tile map. It turned out that it was a "system" function that is called each vertical blanking interval, and that "user" code elsewhere in the program must be feeding it data at the fixed RAM location `$0100`. Let's put a write breakpoint there and run the text writer! 
 
 ```
 Breakpoint 1 hit (1)
 808aa6 sta $0100,x   [9d0100] A:0002 X:0000 Y:0006 S:1bc5 D:0900 DB:9d nvmxdIzc V:248 H: 680 F:13
 ```
 
-That's promising. Let's continue running and see if more code writes at this location.
+That's promising. Let's continue running and see if any other code writes to this location.
 
 ```
 Breakpoint 1 hit (2)
 808aa6 sta $0100,x   [9d0100] A:0002 X:0000 Y:0006 S:1bc5 D:0900 DB:9d nvmxdIzc V:248 H: 656 F:29
 ```
 
-Nope! Only the instruction at `808aa6` touches RAM location `$0100` during this screen, and is run only when a new character is plotted. Let's search for `808aa6` in our disassembly!
+Nope! Only the instruction at `808aa6` touches RAM location `$0100` during this screen, and is run only when a new character is plotted. Let's search for `808AA6` in our disassembly!
 
 ```
 Auto0015:
@@ -66,9 +66,9 @@ Auto0016:
     /* mI         808ABC 6B          */ rtl
 ```
 
-The function labelled `Auto0015` in my current disassembly writes the values in `A` and `X` to to `$0100,x` and `$0102,x` respectively, using the value in `$028E` as index. We clearly want to see where this function is called.
+The function labelled `Auto0015` in the current disassembly writes the values in `A` and `X` to to `$0100,x` and `$0102,x` respectively, using the value in `$028E` as index. We clearly want to see where this function is called from.
 
-I also included the following function, `Auto0016`, since we can see that it also plays a part in populating the data structure consumed by `NMI_vram_memcpy`. Seeing that it writes a zero word to the data indexed at `$0100`, it is likely used to terminate the data. Now is a good time to move these two function from the `auto.labels` file to our organized label file. Although I do have a pretty good hunch on how they are used already, I'll wait with renaming them for a bit.
+I also included the following function, `Auto0016`, since it is likely that it probably also plays a part in populating the data structure consumed by `NMI_vram_memcpy`. Seeing that it writes a zero word to the data indexed at `$0100`, it is probably used to terminate the data. Now is a good time to move these two function from the `auto.labels` file to our organized label file. Although we do have a pretty good hunch on how they are used already, I'll wait with renaming them for a bit.
 
 Also worth noting is that `Auto0015` increments X by 4 just before returning, making `$0100,x` point to the word after the two words written in the function. Since X isn't stashed away anywhere, we should look closely at how X is used right after `Auto0015` has returned to caller.
 
@@ -79,7 +79,7 @@ Now let's step out of the `Auto0015` function and see where we end up!
 ![Stepping Out](/images/tutorial-re2/stepping_out.png)
 > Pro-Tip! Notice that the same labels we know from the snestistics disassembly are also visible in the bsnes+ debugger? Wonderful, right? Use the `-symbolfmaoutfile` option to generate a symbol file that will automatically be used by the debugger, if it's in the same directory as the ROM file and has the same base name.
 
-What's immediatly striking is that the subroutine call we returned from wasn't `Auto0015` at `808A70`, but rather another auto-generated function at `80FF66`. Let's quickly consult our disassembly to see what's up there!
+What's immediatly striking is that the subroutine call we returned from wasn't `Auto0015` at `808A70`, but rather another auto-generated function at `80FF66`. Let's quickly consult our disassembly to see what's up there:
 
 ```
 Auto0118:
@@ -95,7 +95,7 @@ Auto0120:
     /* MI         80FF69 4C AE 8A    */ jmp.w Auto0016
 ```
 
-Phew, nothing more complicated than a list of jumps. This technique was probably utilized to minimize build times; some (probably the "library/system") functions are called through a list of jumps at fixed addresses, so the developers could easier split up the build process into smaller chunks. Static library linkage, of sorts. Let's move `Auto0119` and `Auto0120`  from `auto.labels` and put them next to `Auto0015` and `Auto0016`.
+Phew, nothing more complicated than a list of jumps. This technique was probably utilized to minimize build times; some (probably the "library/system") functions are called through a list of jumps at fixed addresses, so the developers could more easily split up the build process into smaller chunks. Static library linkage, of sorts. Let's move `Auto0119` and `Auto0120`  from `auto.labels` and put them next to `Auto0015` and `Auto0016`.
 
 Now, back to the disassembly! The function around `9DD3BA` is pretty long, ranging 218 bytes from `9DD36F` to `9DD449`, so I won't list the whole thing here. But looking just at the same portion that was already visible in the debugger view above, we should be able to figure some things out:
 
@@ -124,9 +124,9 @@ _Auto0501_9DD3C3:
 
 Remember that `Auto0119->Auto0015` returned with X indexing right after the two word values it had written at `$0100` and `$0102`? The short loop that follows will read values indirectly from `($02),y` and write them to `$0100,x`, calling `Auto0120->Auto0016` when done.
 
-My hunch was that `Auto0015` would set up part of the data needed by `NMI_vram_memcpy`, returning with X pointing where the data to be copied by it should go. `Auto0016` is then called to terminate the block of data. 
+My hunch was that `Auto0015` would set up part of the data structure needed by `NMI_vram_memcpy` and returning with X pointing to the next location in that structure; where the actual values to be copied should go. Writing to `$0100,x` would then be used to insert tile values to be copied, followed by a call to `Auto0016` to terminate the structure. 
 
-Let's step through a couple of iterations at `9DD3C3` to see where it pulls the data from.
+Let's step through a couple of iterations at `9DD3C3` to see where it pulls data from.
 
 ```
 Breakpoint 3 hit (1)
@@ -152,8 +152,8 @@ And what may the other blue block at `9DF292` (`ac f2`...) be? Reading the value
 
 Next steps
 ==========
-At this point we've traced the data from what is displayed on screen, to the data in VRAM and all the way back to ROM. Maybe a bit surprisingly, there's no plain text strings stored but rather arrays of raw tile data. The developers probably decided that with so little text in the game, it's simpler to bake the text into tile data as part of the build/tooling, and save some run-time complexity. A game with more text would surely add another run-time step where text encoded as 1- or 2-byte characters are transformed to 2*2 tile map words.
+At this point we've traced the data from what is displayed on screen, to the data in VRAM and all the way back to ROM. Maybe a bit surprisingly, there's no plain text strings stored but rather arrays of raw tile data. The developers probably decided that with so little text in the game, it's simpler to bake the text into tile data as part of the build/tooling to save some run-time complexity. A game with more text would surely add another run-time step where text encoded as 1- or 2-byte characters are transformed to 2*2 tile map words.
 
-In the next part we'll add the information we gathered to our snestistics labels file, and trace back one more step to see where the pointers to the "string definitions" data structures we just found come from!
+In the next part we'll add the information we gathered to our snestistics labels file, and trace back one more step to see where the pointers to the "string definition" data structures we just found come from!
 
 *To be continued...*
