@@ -68,7 +68,7 @@ Auto0016:
 
 The function labelled `Auto0015` in the current disassembly writes the values in `A` and `X` to to `$0100,x` and `$0102,x` respectively, using the value in `$028E` as index. We clearly want to see where this function is called from.
 
-I also included the following function, `Auto0016`, since it is likely that it probably also plays a part in populating the data structure consumed by `NMI_vram_memcpy`. Seeing that it writes a zero word to the data indexed at `$0100`, it is probably used to terminate the data. Now is a good time to move these two function from the `auto.labels` file to our organized label file. Although we do have a pretty good hunch on how they are used already, I'll wait with renaming them for a bit.
+I also included the following function, `Auto0016`, since it likely plays a part in populating the data structure consumed by `NMI_vram_memcpy` too. Seeing that it writes a zero word to the data indexed at `$0100`, it is probably used to terminate the data. Now is a good time to move these two function from the `auto.labels` file to our organized label file. Although we do have a pretty good hunch on how they are used already, I'll wait with renaming them for a bit.
 
 Also worth noting is that `Auto0015` increments X by 4 just before returning, making `$0100,x` point to the word after the two words written in the function. Since X isn't stashed away anywhere, we should look closely at how X is used right after `Auto0015` has returned to caller.
 
